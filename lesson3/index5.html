@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            }, {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            }, {
+                id: 8,
+                price: 78,
+            },];
+
+        function photos_find(value, index) {
+            if (products[index].photos != undefined) {
+                if (products[index].photos.length > 0) {
+                    return value;
+                }
+                else {
+                    return false
+                }
+            }
+        }
+        const result = products.filter(photos_find);
+        console.log("Товары с фото");
+        console.log(result);
+
+        products.sort(function (a, b) {
+            if (a.price > b.price) {
+                return 1;
+            }
+            if (a.price < b.price) {
+                return -1;
+            }
+            // a должно быть равным b
+            return 0;
+        });
+        console.log("Oтсортированные по цене продукты");
+        console.log(products);
+    </script>
+</body>
+
+</html>
