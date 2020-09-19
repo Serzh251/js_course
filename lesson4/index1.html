@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        function Numbers(a) {
+            if (!Number.isInteger(a) || a < 0 || a > 999) {
+                console.log("введите целое число от 0 до 999");
+                return {};
+            }
+
+            return {
+                units: a % 10,
+                tens: Math.floor(a / 10) % 10,
+                hundreds: Math.floor(a / 100) % 10,
+            }
+        }
+        console.log(Numbers(5));
+        console.log(Numbers(48));
+        console.log(Numbers(815));
+        console.log(Numbers("56"));
+        console.log(Numbers(0.25));
+
+
+    </script>
+</body>
+
+</html>
